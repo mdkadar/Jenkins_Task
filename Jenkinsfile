@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage ('Installing updates') {
             steps {
-                PowerShell(". '.\disk-usage.ps1'")
+                PowerShell(". '.\\disk-usage.ps1'")
                 /*
                  PowerShell("Install-Module -Name PSWindowsUpdate")
   	             PowerShell("Import-Module PSWindowsUpdate")
