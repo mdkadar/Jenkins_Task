@@ -3,12 +3,14 @@ pipeline {
     stages {
         stage ('Installing updates') {
             steps {
-                 PowerShell("Install-Module -Name PSWindowsUpdate") 
-                 /*bat 'Install-Module -Name PSWindowsUpdate -RequiredVersion 2.1.0.1'*/
+                PowerShell(". '.\\disk-usage.ps1'")
+                /*
+                 PowerShell("Install-Module -Name PSWindowsUpdate")
   	             PowerShell("Import-Module PSWindowsUpdate")
                  PowerShell("Get-WUInstall -ListOnly")
                  PowerShell("Get-WUInstall -AcceptAll –IgnoreReboot")
                  PowerShell("Get-WUHistory")
+                */
             }
          }
      }
