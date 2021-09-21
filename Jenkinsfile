@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage ('Installing updates') {
             steps {
-                 PowerShell("Install-Module -Name PSWindowsUpdate -RequiredVersion 2.1.0.1") 
+                 PowerShell(" 'Install-Module -Name PSWindowsUpdate -RequiredVersion 2.1.0.1' ") 
                  /*bat 'Install-Module -Name PSWindowsUpdate -RequiredVersion 2.1.0.1'*/
   	             bat "Import-Module PSWindowsUpdate"
                  bat "Get-WUInstall -ListOnly"
