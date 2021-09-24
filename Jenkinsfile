@@ -6,7 +6,7 @@ pipeline {
                 bat "powershell.exe Install-Module -Name PSWindowsUpdate -Scope CurrentUser"
                 bat "powershell.exe Import-Module PSWindowsUpdate"
                 bat "powershell.exe Get-WUInstall"
-                bat "powershell.exe Get-WUInstall -AcceptAll –IgnoreReboot"
+                bat "powershell.exe Get-WUInstall -AcceptAll –IgnoreReboot -Scope CurrentUser"
                 bat "powershell.exe Get-WUHistory"
                 /*PowerShell(". '.\\disk-usage.ps1'")
                 $arg = "-file C:\filename.ps1"
