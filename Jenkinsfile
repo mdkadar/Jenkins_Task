@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage ('Installing updates') {
             steps {
-                bat "powershell.exe Start-process powershell -Verb runAs -ArgumentList '.\ldisk-usage.ps1'"
+                bat "powershell.exe Start-process powershell -Verb runAs -ArgumentList '.\disk-usage.ps1'"
                 /*bat "powershell.exe Install-Module -Name PSWindowsUpdate -Scope CurrentUser"
                 bat "powershell.exe Import-Module PSWindowsUpdate"
                 bat "powershell.exe Get-WUInstall"
