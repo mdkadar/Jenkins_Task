@@ -4,13 +4,13 @@ pipeline {
         stage ('Installing updates') {
             steps {
                 
-                bat "powershell.exe start-process PowerShell -verb runas -file .\\disk-usage.ps1"
-               /*  bat "powershell.exe Install-Module -Name PSWindowsUpdate"
+                bat "powershell.exe start-process PowerShell -verb runas"
+                bat "powershell.exe Install-Module -Name PSWindowsUpdate"
                 bat "powershell.exe Import-Module PSWindowsUpdate"
                 bat "powershell.exe Get-WUInstall -ListOnly"
                 bat "powershell.exe Get-WUInstall -AcceptAll –IgnoreReboot"
                 bat "powershell.exe Get-WUHistory"
-                PowerShell(". '.\\disk-usage.ps1'")
+               /*  PowerShell(". '.\\disk-usage.ps1'")
                 $arg = "-file C:\filename.ps1"
                  PowerShell("Install-Module -Name PSWindowsUpdate")
   	             PowerShell("Import-Module PSWindowsUpdate")
