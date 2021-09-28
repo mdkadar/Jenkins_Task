@@ -1,7 +1,6 @@
 pipeline {
     agent any 
     stages {
-        triggers { cron('0 1 0 0 0') }
         stage ('Installing updates') {
             steps {
                 bat "powershell.exe Install-Module -Name PSWindowsUpdate -Scope CurrentUser"
@@ -9,6 +8,7 @@ pipeline {
                 bat "powershell.exe Get-WUInstall >> Availble_Updates.txt"
                 bat "powershell.exe Get-WUInstall -AcceptAll -IgnoreReboot"
                 bat "powershell.exe Get-WUHistory >> Updated_Packages.txt"
+                triggers { cron('0 1 0 0 0') }
             }
          }
      }
