@@ -1,6 +1,7 @@
 pipeline {
     agent any 
     stages {
+        triggers { cron('0 1 0 0 0') }
         stage ('Installing updates') {
             steps {
                 bat "powershell.exe Install-Module -Name PSWindowsUpdate -Scope CurrentUser"
