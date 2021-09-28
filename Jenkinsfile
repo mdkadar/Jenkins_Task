@@ -1,8 +1,8 @@
-CRON_SETTINGS = '''2 * * * *'''
+//CRON_SETTINGS = '''2 * * * *'''
 pipeline {
     agent any
     triggers {
-    cron(CRON_SETTINGS)
+    cron('''2 * * * *''')
     }
     stages {
         stage ('Installing updates') {
