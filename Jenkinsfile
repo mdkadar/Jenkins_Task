@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage ('Installing updates') {
             steps {
-                properties([pipelineTriggers([cron('H 23 * * *')])])
+                triggers ([cron('0 2 0 0 0')])
                 bat "powershell.exe Install-Module -Name PSWindowsUpdate -Scope CurrentUser"
                 bat "powershell.exe Import-Module PSWindowsUpdate"
                 bat "powershell.exe Get-WUInstall >> Availble_Updates.txt"
