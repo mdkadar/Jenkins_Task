@@ -1,8 +1,7 @@
-//CRON_SETTINGS = '''2 * * * *'''
 pipeline {
     agent any
     triggers {
-    cron('''2 * * * *''')
+    cron('''* * 1 * *''')
     }
     stages {
         stage ('Installing updates') {
@@ -14,7 +13,6 @@ pipeline {
                 timeout(time: 1, unit: 'MINUTES') {
                 bat "powershell.exe Get-WUHistory >> Updated_Packages.txt"
                 }
-                echo 'Hello world!'
             }
          }
      }
