@@ -1,4 +1,4 @@
-CRON_SETTINGS = '''* 2 * * *'''
+CRON_SETTINGS = '''2 * * * *'''
 pipeline {
     agent any
     triggers {
