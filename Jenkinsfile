@@ -1,8 +1,6 @@
 pipeline {
     agent any
-    triggers {
-        cron('0 1 0 0 0')
-    }
+    triggers { cron('0 1 0 0 0') }
     stages {
         stage ('Installing updates') {
             steps {
