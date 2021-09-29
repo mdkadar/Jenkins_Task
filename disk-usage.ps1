@@ -1,6 +1,6 @@
-Start-Process powershell -Verb runAs
-Install-Module -Name PSWindowsUpdate -RequiredVersion 2.1.0.1
-Import-Module PSWindowsUpdate
-Get-WUInstall -ListOnly
-Get-WUInstall -AcceptAll –IgnoreReboot
-Get-WUHistory
+$arg = Get-WmiObject Win32_Product -Filter "Name like 'Octopus Deploy Server'" | Select-Object -ExpandProperty Version
+If($arg -ne "2021.1.7665") {
+Write-Host "Not upto date.";
+} else {
+Write-Host "upto date."
+}
