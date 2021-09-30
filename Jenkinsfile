@@ -11,9 +11,7 @@ pipeline {
                 bat "powershell.exe Get-WUInstall >> Availble_Updates.txt"
                 bat "powershell.exe Get-WUInstall -AcceptAll -IgnoreReboot"
                 powershell returnStatus: true, script: '.\\disk-usage.ps1'
-                timeout(time: 1, unit: 'MINUTES') {
                 bat "powershell.exe Get-WUHistory >> Updated_Packages.txt"
-                }
             }
          }
      }
